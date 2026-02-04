@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wachirawit | AI Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Dark Minimal Palette */
+            --bg-body: #0d1117; /* Very dark blue-gray (GitHub Dark dim style) */
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --card-bg: #161b22;
+            
+            /* Pastel Accents (Adjusted for Dark Mode) */
+            --pastel-blue: #388bfd1a; /* Low opacity blue */
+            --pastel-blue-text: #58a6ff;
+            --pastel-cool-gray: #30363d;
+            
+            --border-radius: 12px;
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* --- Header / Hero --- */
+        .hero {
+            margin-bottom: 60px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #f0f6fc;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* --- Minimal Grid --- */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 24px;
+            grid-auto-flow: dense;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--pastel-cool-gray);
+            transition: transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--text-muted);
+        }
+
+        /* Typography within cards */
+        .card h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        /* Spans */
+        .col-span-2 { grid-column: span 2; }
+        .row-span-2 { grid-row: span 2; }
+
+        /* --- Specific Cards --- */
+        
+        /* Skills Tags */
+        .tags-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tag {
+            background: rgba(56, 139, 253, 0.15);
+            color: #58a6ff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(56, 139, 253, 0.3);
+        }
+
+        /* Experience List */
+        .job-item {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--pastel-cool-gray);
+        }
+        .job-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+        
+        .job-role {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #f0f6fc;
+        }
+        
+        .job-company {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .job-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: var(--pastel-cool-gray);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .job-desc {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        /* Contact Box */
+        .contact-card {
+            background-color: rgba(56, 139, 253, 0.1);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid rgba(56, 139, 253, 0.2);
+        }
+        
+        .contact-card:hover {
+            background-color: rgba(56, 139, 253, 0.2);
+            border-color: #58a6ff;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .cv-grid { display: flex; flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header -->
+        <header class="hero">
+            <!-- Removed Open to Work Badge -->
+            <h1>Wachirawit Intaphan</h1>
+            <p>AI Engineer • Data Scientist • LLM Specialist</p>
+        </header>
+
+        <!-- Main Grid -->
+        <main class="cv-grid">
+
+            <!-- About (The TL;DR) -->
+            <section class="card col-span-2">
+                <h3>About Me</h3>
+                <p style="font-size: 1.1rem; font-weight: 300;">
+                    Specialized in building scalable <strong>AI solutions</strong>. 
+                    Deep expertise in Large Language Models (LLM), Generative AI (Image/Diffusion), 
+                    and Reinforcement Learning. I transform complex data into intelligent, 
+                    autonomous systems.
+                </p>
+            </section>
+
+             <!-- Contact (Hit me up) -->
+             <section class="card contact-card" onclick="window.location.href='mailto:wachirawit@email.com'">
+                <div class="contact-icon">👋</div>
+                <div style="font-weight: 600; color: #f0f6fc;">Get in Touch</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">wachirawit@email.com</div>
+            </section>
+
+            <!-- Experience (Proof of Work) -->
+            <section class="card col-span-2">
+                <h3>Experience</h3>
+                
+                {% for job in jobs %}
+                <div class="job-item">
+                    <div class="job-header">
+                        <div>
+                            <span class="job-role">{{ job.position }}</span> 
+                            <span class="job-company">@ {{ job.company.name }}</span>
+                        </div>
+                        <span class="job-date">
+                            {{ job.start_date }} - {% if job.end_date %}{{ job.end_date }}{% else %}Present{% endif %}
+                        </span>
+                    </div>
+                    <p class="job-desc">
+                        {{ job.description }}
+                    </p>
+                </div>
+                {% empty %}
+                <div class="job-item">
+                    <p style="color: var(--text-muted); font-style: italic;">Updating database...</p>
+                </div>
+                {% endfor %}
+
+            </section>
+
+            <!-- Skills (Main Stacks) -->
+            <section class="card">
+                <h3>Tech Stack</h3>
+                <div class="tags-wrapper">
+                    <!-- AI & Data -->
+                    <span class="tag">Python</span>
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">LangChain</span>
+                    <span class="tag">HuggingFace</span>
+                    <span class="tag">OpenAI API</span>
+                    <span class="tag">Stable Diffusion</span>
+                    <span class="tag">Reinforcement Learning</span>
+                    <span class="tag">Pandas / NumPy</span>
+                    <span class="tag">SQL / Vector DBs</span>
+                    
+                    <!-- Tools -->
+                    <span class="tag">Docker</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">FastAPI</span>
+                </div>
+            </section>
+
+             <!-- Companies (New Section) -->
+             <section class="card col-span-2">
+                <h3>Companies & Clients</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
+                    {% for company in companies %}
+                    <div style="padding: 16px; background: rgba(56, 139, 253, 0.05); border-radius: 8px; border: 1px solid var(--pastel-cool-gray);">
+                        <div style="font-weight: 600; color: #f0f6fc; margin-bottom: 4px;">{{ company.name }}</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">📍 {{ company.location }}</div>
+                        <p style="font-size: 0.85rem; color: var(--text-main);">{{ company.description|truncatewords:20 }}</p>
+                    </div>
+                    {% empty %}
+                    <p style="color: var(--text-muted); font-style: italic; grid-column: 1/-1;">No companies listed yet.</p>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Users (Active Users) -->
+            <section class="card">
+                <h3>Active Users</h3>
+                <div style="font-size: 2.5rem; font-weight: 600; color: #f0f6fc; margin-bottom: 5px; line-height: 1;">
+                    {{ users|length }}
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px;">
+                    Account{% if users|length != 1 %}s{% endif %} Registered
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                     {% for user in users %}
+                        <div style="font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+                            <span style="width: 6px; height: 6px; background-color: var(--pastel-blue-text); border-radius: 50%; display: inline-block;"></span>
+                            {{ user.username }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
